@@ -1,0 +1,23 @@
+name: Shipping
+type: module
+description: 'Provides core shipping functionality.'
+package: Commerce (contrib)
+core_version_requirement: ^8.7.7 || ^9
+configure: commerce_shipping.admin_overview
+dependencies:
+  - commerce:commerce
+  - commerce:commerce_order
+  - commerce:commerce_price
+  - physical:physical
+config_devel:
+  install:
+    - core.entity_view_display.commerce_shipment.default.user
+    - core.entity_view_mode.commerce_shipment.user
+    - commerce_shipping.commerce_shipment.default
+  optional:
+    - commerce_checkout.commerce_checkout_flow.shipping
+
+# Information added by Drupal.org packaging script on 2020-03-05
+version: '8.x-2.0-rc1'
+project: 'commerce_shipping'
+datestamp: 1583429597

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cash_on_delivery
+label: 'Cash on delivery'
+weight: null
+plugin: manual
+configuration:
+  instructions:
+    value: 'You will pay when receiving package. '
+    format: plain_text
+  display_label: 'Cash on delivery'
+  mode: n/a
+  payment_method_types:
+    - credit_card
+conditions: {  }
+conditionOperator: AND
+

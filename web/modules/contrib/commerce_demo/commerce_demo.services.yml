@@ -1,0 +1,35 @@
+services:
+  commerce_demo.content_exporter:
+    class: Drupal\commerce_demo\ContentExporter
+    arguments: ['@entity_type.manager']
+
+  commerce_demo.content_importer:
+    class: Drupal\commerce_demo\ContentImporter
+    arguments: ['@entity_type.manager']
+
+  commerce_demo.address_events_subscriber:
+    class: Drupal\commerce_demo\EventSubscriber\AddressEventsSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_demo.order_events_subscriber:
+    class: Drupal\commerce_demo\EventSubscriber\OrderEventsSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_demo.product_breadcrumb_builder:
+    class: Drupal\commerce_demo\ProductBreadcrumbBuilder
+    arguments: ['@pathauto.alias_cleaner', '@entity_type.manager', '@router.route_provider']
+    tags:
+      - { name: breadcrumb_builder, priority: 1100 }
+
+  commerce_demo.catalog_breadcrumb_builder:
+    class: Drupal\commerce_demo\CatalogBreadcrumbBuilder
+    arguments: ['@request_stack', '@title_resolver', '@entity_type.manager']
+    tags:
+      # facets_pretty_path is set to 1500.
+      - { name: breadcrumb_builder, priority: 1501 }
+
+  commerce_demo.theme_handler:
+    class: Drupal\commerce_demo\ThemeHandler
+    arguments: ['@entity_type.manager']

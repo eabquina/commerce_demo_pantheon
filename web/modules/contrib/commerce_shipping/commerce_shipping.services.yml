@@ -1,0 +1,85 @@
+services:
+  access_check.shipment_collection:
+    class: Drupal\commerce_shipping\Access\ShipmentCollectionAccessCheck
+    arguments: ['@entity_type.manager']
+    tags:
+    - { name: access_check, applies_to: _shipment_collection_access }
+
+  commerce_shipping.packer_manager:
+    class: Drupal\commerce_shipping\PackerManager
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: service_collector, call: addPacker, tag: commerce_shipping.packer }
+
+  commerce_shipping.default_packer:
+    class: Drupal\commerce_shipping\Packer\DefaultPacker
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: commerce_shipping.packer, priority: -100 }
+
+  commerce_shipping.order_shipment_summary:
+    class: Drupal\commerce_shipping\OrderShipmentSummary
+    arguments: ['@entity_type.manager', '@commerce_shipping.order_manager']
+
+  commerce_shipping.early_order_processor:
+    class: Drupal\commerce_shipping\EarlyOrderProcessor
+    arguments: ['@entity_type.manager', '@commerce_shipping.order_manager', '@commerce_shipping.shipment_manager']
+    tags:
+      - { name: commerce_order.order_processor, priority: 200 }
+
+  commerce_shipping.late_order_processor:
+    class: Drupal\commerce_shipping\LateOrderProcessor
+    arguments: ['@commerce_shipping.order_manager']
+    tags:
+      - { name: commerce_order.order_processor, priority: -100 }
+
+  commerce_shipping.referenceable_plugin_types_subscriber:
+    class: Drupal\commerce_shipping\EventSubscriber\ReferenceablePluginTypesSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_shipping.order_subscriber:
+    class: Drupal\commerce_shipping\EventSubscriber\OrderSubscriber
+    arguments: ['@commerce_shipping.order_manager']
+    tags:
+      - { name: event_subscriber }
+
+  commerce_shipping.order_manager:
+    class: Drupal\commerce_shipping\ShippingOrderManager
+    arguments: ['@entity_type.manager', '@entity_type.bundle.info', '@commerce_shipping.packer_manager']
+
+  commerce_shipping.profile_subscriber:
+    class: Drupal\commerce_shipping\EventSubscriber\ProfileSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_shipping.route_subscriber:
+    class: Drupal\commerce_shipping\EventSubscriber\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_shipping.profile_field_copy:
+    class: Drupal\commerce_shipping\ProfileFieldCopy
+    arguments: ['@current_user']
+
+  commerce_shipping.shipment_manager:
+    class: Drupal\commerce_shipping\ShipmentManager
+    arguments: ['@entity_type.manager', '@entity.repository', '@event_dispatcher', '@logger.channel.commerce_shipping']
+
+  logger.channel.commerce_shipping:
+    parent: logger.channel_base
+    arguments: ['commerce_shipping']
+
+  commerce_shipping.order_item_subscriber:
+    class: Drupal\commerce_shipping\EventSubscriber\OrderItemSubscriber
+    arguments: ['@commerce_shipping.order_manager']
+    tags:
+      - { name: event_subscriber }
+
+  plugin.manager.commerce_shipping_method:
+    class: Drupal\commerce_shipping\ShippingMethodManager
+    parent: default_plugin_manager
+
+  plugin.manager.commerce_package_type:
+    class: Drupal\commerce_shipping\PackageTypeManager
+    arguments: ['@module_handler', '@cache.discovery']

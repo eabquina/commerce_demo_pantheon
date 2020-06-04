@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.clothing
+    - core.entity_view_mode.commerce_product_variation.summary
+  enforced:
+    module:
+      - commerce_checkout
+  module:
+    - commerce_price
+id: commerce_product_variation.clothing.summary
+targetEntityType: commerce_product_variation
+bundle: clothing
+mode: summary
+content:
+  field_images:
+    weight: 1
+    label: hidden
+    settings:
+      deltas: '0'
+      image_style: medium
+      image_link: ''
+      deltas_reversed: 0
+    third_party_settings: {  }
+    type: image_delta_formatter
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: 2
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  product_id: true
+  price: true
+  sku: true

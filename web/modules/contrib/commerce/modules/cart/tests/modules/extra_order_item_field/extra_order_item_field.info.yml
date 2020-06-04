@@ -1,0 +1,12 @@
+name: Extra order item field
+type: module
+description: Contains field and field storage config for extra order item field
+package: Testing
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - commerce:commerce_order
+
+# Information added by Drupal.org packaging script on 2020-06-03
+version: '8.x-2.19'
+project: 'commerce'
+datestamp: 1591210163

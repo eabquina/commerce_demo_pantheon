@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.physical
+    - core.entity_view_mode.commerce_order.user
+    - field.field.commerce_order.physical.shipments
+  module:
+    - commerce_order
+    - entity_reference_revisions
+    - state_machine
+id: commerce_order.physical.user
+targetEntityType: commerce_order
+bundle: physical
+mode: user
+content:
+  billing_profile:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  completed:
+    label: inline
+    type: timestamp
+    weight: 3
+    region: content
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  mail:
+    label: inline
+    type: basic_string
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  order_items:
+    type: commerce_order_item_table
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  order_number:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  placed:
+    label: inline
+    type: timestamp
+    weight: 4
+    region: content
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  state:
+    label: inline
+    type: list_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  total_price:
+    label: hidden
+    type: commerce_order_total_summary
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true
+  ip_address: true
+  shipments: true
+  store_id: true
+  uid: true

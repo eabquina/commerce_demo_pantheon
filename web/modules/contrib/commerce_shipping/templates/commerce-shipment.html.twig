@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ *
+ * Default template for shipments.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - shipment: The rendered shipment fields.
+ *   Use 'shipment' to print them all, or print a subset such as
+ *   'shipment.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ shipment|without('title') }}
+ *   @endcode
+ * - shipment_entity: The shipment entity.
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes }}>
+  {{ shipment }}
+</div>

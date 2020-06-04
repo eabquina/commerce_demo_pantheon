@@ -1,0 +1,6 @@
+services:
+  commerce_demo.export_command:
+    class: Drupal\commerce_demo\Command\ExportCommand
+    arguments: ['@commerce_demo.content_exporter', '@entity_type.manager', '@entity_type.bundle.info']
+    tags:
+      - { name: drupal.command }

@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.clothing
+    - field.field.commerce_product_variation.clothing.attribute_color
+    - field.field.commerce_product_variation.clothing.attribute_size
+    - field.field.commerce_product_variation.clothing.field_images
+    - field.field.commerce_product_variation.clothing.weight
+    - image.style.thumbnail
+  module:
+    - commerce_price
+    - image
+    - physical
+id: commerce_product_variation.clothing.default
+targetEntityType: commerce_product_variation
+bundle: clothing
+mode: default
+content:
+  attribute_color:
+    type: options_select
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  attribute_size:
+    type: options_select
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_images:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  list_price:
+    type: commerce_list_price
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  weight:
+    type: physical_measurement_default
+    weight: 5
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  uid: true

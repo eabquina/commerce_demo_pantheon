@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.simple
+    - core.entity_view_mode.commerce_product.catalog
+    - field.field.commerce_product.simple.body
+    - field.field.commerce_product.simple.field_brand
+    - field.field.commerce_product.simple.field_product_categories
+    - field.field.commerce_product.simple.field_special_categories
+id: commerce_product.simple.catalog
+targetEntityType: commerce_product
+bundle: simple
+mode: catalog
+content:
+  title:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_brand: true
+  field_product_categories: true
+  field_special_categories: true
+  stores: true
+  uid: true
+  variations: true

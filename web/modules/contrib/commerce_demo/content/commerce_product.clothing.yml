@@ -1,0 +1,150 @@
+802dfe56-8536-4287-a0fa-6bed3fd3a621:
+  type: clothing
+  status: '1'
+  title: 'Drupal Commerce Hoodie'
+  body:
+    value: "<p>Vivamus ante quam, tristique quis, porttitor nec, viverra eget, ante. Nulla vitae nunc vel est dignissim dictum. Suspendisse feugiat pellentesque ante. Etiam viverra commodo neque. Aenean id mi. Sed lacinia tincidunt purus. Maecenas eros quam, feugiat quis, feugiat vel, rutrum in, sem. Pellentesque eu ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Vestibulum mollis molestie elit.</p>\r\n"
+    summary: ''
+    format: basic_html
+  field_brand: 316b2893-6876-49e0-9ce6-68d8751bc8b9
+  field_product_categories:
+    - d52448c0-22c5-4a62-995c-e09c881a3f67
+  variations:
+    2a242d40-c483-4deb-bab5-1eab4e715a28:
+      type: clothing
+      sku: DCHOODIE-BLU-SM
+      title: 'Drupal Commerce Hoodie - Blue, Small'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 29c71bd2-b31b-4548-af50-d477f371a849
+      attribute_color: 967105d8-5047-41f3-a065-e59edfcec5bb
+      field_images:
+        -
+          alt: 'Blue hoodie (front)'
+          filename: hoodie-blue-1.jpg
+        -
+          alt: 'Blue hoodie (front - alternative)'
+          filename: hoodie-blue-2.jpg
+        -
+          alt: 'Blue hoodie (front - cropped)'
+          filename: hoodie-blue-3.jpg
+      weight:
+        number: '52.000000'
+        unit: kg
+    c578aa37-8f30-4b5c-9af5-af437f2099fe:
+      type: clothing
+      sku: DCHOODIE-BLU-MD
+      title: 'Drupal Commerce Hoodie - Blue, Medium'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 8bb078cf-2623-42b6-a7c9-9db9b329f4d1
+      attribute_color: 967105d8-5047-41f3-a065-e59edfcec5bb
+      field_images:
+        -
+          alt: 'Blue hoodie (front)'
+          filename: hoodie-blue-1.jpg
+        -
+          alt: 'Blue hoodie (front - alternative)'
+          filename: hoodie-blue-2.jpg
+        -
+          alt: 'Blue hoodie (front - cropped)'
+          filename: hoodie-blue-3.jpg
+      weight:
+        number: '1.000000'
+        unit: kg
+    a9fd3871-f0a6-45dd-8d78-3c01030e6911:
+      type: clothing
+      sku: DCHOODIE-BLU-LG
+      title: 'Drupal Commerce Hoodie - Blue, Large'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 6e7055b3-2b69-4d1e-91a3-a054cdcaf7ea
+      attribute_color: 967105d8-5047-41f3-a065-e59edfcec5bb
+      field_images:
+        -
+          alt: 'Blue hoodie (front)'
+          filename: hoodie-blue-1.jpg
+        -
+          alt: 'Blue hoodie (front - alternative)'
+          filename: hoodie-blue-2.jpg
+        -
+          alt: 'Blue hoodie (front - cropped)'
+          filename: hoodie-blue-3.jpg
+      weight:
+        number: '52.000000'
+        unit: kg
+    b039920f-70ec-4352-9df7-9600f6f44684:
+      type: clothing
+      sku: DCHOODIE-GRE-SM
+      title: 'Drupal Commerce Hoodie - Green, Small'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 29c71bd2-b31b-4548-af50-d477f371a849
+      attribute_color: 0b66adc7-be86-44cb-8221-f2d1f7175d7b
+      field_images:
+        -
+          alt: 'Green hoodie (front)'
+          filename: hoodie-green-1.jpg
+        -
+          alt: 'Green hoodie (front - alternative)'
+          filename: hoodie-green-2.jpg
+        -
+          alt: 'Green hoodie (front - cropped)'
+          filename: hoodie-green-3.jpg
+      weight:
+        number: '1.000000'
+        unit: kg
+    b688a80d-a9c8-45c9-b27a-15c696d50640:
+      type: clothing
+      sku: DCHOODIE-GRE-MD
+      title: 'Drupal Commerce Hoodie - Green, Medium'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 8bb078cf-2623-42b6-a7c9-9db9b329f4d1
+      attribute_color: 0b66adc7-be86-44cb-8221-f2d1f7175d7b
+      field_images:
+        -
+          alt: 'Green hoodie (front)'
+          filename: hoodie-green-1.jpg
+        -
+          alt: 'Green hoodie (front - alternative)'
+          filename: hoodie-green-2.jpg
+        -
+          alt: 'Green hoodie (front - cropped)'
+          filename: hoodie-green-3.jpg
+      weight:
+        number: '1.000000'
+        unit: kg
+    bea5ef34-3be5-4f8c-9473-500166cd90eb:
+      type: clothing
+      sku: DCHOODIE-GRE-LG
+      title: 'Drupal Commerce Hoodie - Green, Large'
+      price:
+        number: '52.000000'
+        currency_code: USD
+      status: '1'
+      attribute_size: 6e7055b3-2b69-4d1e-91a3-a054cdcaf7ea
+      attribute_color: 0b66adc7-be86-44cb-8221-f2d1f7175d7b
+      field_images:
+        -
+          alt: 'Green hoodie (front)'
+          filename: hoodie-green-1.jpg
+        -
+          alt: 'Green hoodie (front - alternative)'
+          filename: hoodie-green-2.jpg
+        -
+          alt: 'Green hoodie (front - cropped)'
+          filename: hoodie-green-3.jpg
+      weight:
+        number: '1.000000'
+        unit: kg

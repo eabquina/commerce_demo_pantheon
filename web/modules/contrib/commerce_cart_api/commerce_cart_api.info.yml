@@ -1,0 +1,16 @@
+name: 'Commerce Cart API'
+type: module
+description: 'Provides a RESTful interface to interact with carts in Drupal Commerce via a lightweight public API.'
+# core: 8.x
+package: 'Commerce (contrib)'
+dependencies:
+  - commerce:commerce
+  - commerce:commerce_cart
+  - drupal:serialization
+  - drupal:rest
+
+# Information added by Drupal.org packaging script on 2019-06-19
+version: '8.x-1.4'
+core: '8.x'
+project: 'commerce_cart_api'
+datestamp: 1560966497

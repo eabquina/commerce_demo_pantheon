@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - commerce_shipping
+  module:
+    - profile
+id: profile.shipping
+label: Shipping
+targetEntityType: profile
+cache: true

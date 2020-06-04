@@ -1,0 +1,20 @@
+{
+    "name": "drupal/commerce_demo",
+    "type": "drupal-module",
+    "description": "Demo module for Drupal Commerce.",
+    "homepage": "http://drupal.org/project/commerce_demo",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/color_field": "^2.0",
+        "drupal/commerce": "^2.16",
+        "drupal/commerce_shipping": "^2.0",
+        "drupal/facets": "^1.0",
+        "drupal/facets_pretty_paths": "^1.0",
+        "drupal/image_delta_formatter": "^1.0",
+        "drupal/pathauto": "^1.0",
+        "drupal/search_api": "^1.9",
+        "drupal/taxonomy_menu": "^3.3",
+        "drupal/taxonomy_term_depth": "2.x-dev"
+    },
+    "minimum-stability": "dev"
+}

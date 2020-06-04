@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: clothing
+label: Clothing
+description: ''
+variationType: clothing
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

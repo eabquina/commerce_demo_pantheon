@@ -1,0 +1,7 @@
+commerce_demo.frontpage:
+  path: '/frontpage'
+  defaults:
+    _controller: '\Drupal\commerce_demo\Controller\Frontpage::view'
+    _title: 'Home'
+  requirements:
+    _access: 'TRUE'

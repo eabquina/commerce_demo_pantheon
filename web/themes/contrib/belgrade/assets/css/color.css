@@ -1,0 +1,199 @@
+:root {
+  --bodyBg: #fff;
+  --textColor: #333;
+  --dark: #272727;
+  --primaryColor: #41449f;
+  --primaryLight: #babad3;
+  --primaryLighter: #e9e9f2;
+}
+
+/* Background color */
+body {
+  background-color: var(--bodyBg)
+}
+
+/* Text color */
+body,
+.region-header .menu-catalog .dropdown-toggle,
+.region-header .menu-catalog>.menu__item>.menu__link,
+.commerce-product--catalog__info .field--name-title a {
+  color: var(--textColor)
+}
+
+/* Inverted text color fix */
+.path-frontpage .region-header .menu-catalog>.menu__item>.menu__link {
+  color: #fffffe;
+}
+
+/* Dark */
+.glyph__circled {
+  color: var(--dark)
+}
+
+.navbar-default,
+.footer {
+  background-color: var(--dark)
+}
+
+/* Primary */
+.side-flyout,
+.btn-info,
+.btn-white,
+form.user-pass,
+#user-pass,
+#user-register-form,
+#user-pass .btn,
+#user-register-form .btn,
+.btn-primary, .path-cart [id="edit-checkout"],
+.btn-default:hover, .path-cart :hover[id="edit-submit"],
+.line:after, .form-header:after, .page-header:after,
+[type="checkbox"]:checked+label:after,
+.well-primary,
+.well-primary .btn-white,
+.well-primary .btn,
+.well-primary .form-wrapper__returning-customer a,
+.form-wrapper__returning-customer .well-primary a,
+.well-primary .cart-block--offcanvas-contents__links a,
+.cart-block--offcanvas-contents__links .well-primary a .region-header .menu-catalog .dropdown-toggle:hover:before,
+.region-header .menu-catalog .dropdown-toggle.is-active:before,
+.region-header .menu-catalog>.menu__item>.menu__link:hover:before,
+.region-header .menu-catalog>.menu__item>.menu__link.is-active:before,
+[type="radio"]:checked+span+label:after, [type="radio"]:checked+label:after,
+.user-login-form+.auth-user-form--footer,
+.commerce-product--catalog:hover .commerce-product--catalog__info,
+.commerce-product--catalog__image {
+  background-color: var(--primaryColor)
+}
+
+a,
+a:hover,
+.btn-info:hover,
+.btn-white:hover,
+.btn-default, .path-cart [id="edit-submit"],
+.btn-primary:hover, .path-cart :hover[id="edit-checkout"],
+.number-btn,
+.breadcrumb>li>a,
+.breadcrumb>.active,
+.breadcrumb>li+li:before,
+.form-control,
+.select-wrapper:after,
+.panel-title[data-toggle="collapse"]:after,
+.block-facets .block-title:before,
+.checkout-progress,
+.layout-region-checkout-secondary .checkout-pane-coupon-redemption .btn,
+.layout-region-checkout-secondary .checkout-pane-coupon-redemption .form-wrapper__returning-customer a,
+.form-wrapper__returning-customer .layout-region-checkout-secondary .checkout-pane-coupon-redemption a,
+.layout-region-checkout-secondary .checkout-pane-coupon-redemption .cart-block--offcanvas-contents__links a,
+.cart-block--offcanvas-contents__links .layout-region-checkout-secondary .checkout-pane-coupon-redemption a,
+.well-primary .btn-white:hover,
+.well-primary .btn:hover,
+.well-primary .form-wrapper__returning-customer a:hover,
+.form-wrapper__returning-customer .well-primary a:hover,
+.well-primary .cart-block--offcanvas-contents__links a:hover,
+.cart-block--offcanvas-contents__links .well-primary a:hover .select-wrapper:after,
+.panel-title[data-toggle="collapse"]:after {
+  color: var(--primaryColor)
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-default, .path-cart [id="edit-submit"],
+.btn-primary, .path-cart [id="edit-checkout"],
+.btn-primary:hover, .path-cart :hover[id="edit-checkout"],
+.btn-default:hover, .path-cart :hover[id="edit-submit"],
+.form-control:focus,
+[type="radio"]:checked+span+label:before, [type="radio"]:checked+span+label:after,
+[type="radio"]:checked+label:before,
+[type="radio"]:checked+label:after,
+[type="checkbox"]:checked+label:after,
+.commerce-product--full .form-control,
+.product-img--thumb.active,
+.commerce-product--full .attribute-widgets .product--rendered-attribute .form-radio:checked ~ label.option {
+  border-color: var(--primaryColor)
+}
+
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td{
+  border-top-color: var(--primaryColor)
+}
+
+.table>thead>tr>th,
+.panel-default>.panel-heading,
+.view-commerce-cart-form .table,
+.view-commerce-cart-form .field--name-total-price,
+.commerce-product--catalog {
+  border-bottom-color: var(--primaryColor)
+}
+
+/* Light Color */
+.block-facets,
+.table-striped>tbody>tr:nth-of-type(odd),
+.table-hover>tbody>tr:hover,
+.table>thead>tr>td.active,
+.table>thead>tr>th.active,
+.table>thead>tr.active>td,
+.table>thead>tr.active>th,
+.table>tbody>tr>td.active,
+.table>tbody>tr>th.active,
+.table>tbody>tr.active>td,
+.table>tbody>tr.active>th,
+.table>tfoot>tr>td.active,
+.table>tfoot>tr>th.active,
+.table>tfoot>tr.active>td,
+.table>tfoot>tr.active>th,
+.table-striped-alt>tbody>tr:nth-of-type(even),
+.view-commerce-cart-form .table>tbody>tr:nth-of-type(even),
+.auth-user-form>form,
+.user-pass+.auth-user-form--footer,
+.user-register-form+.auth-user-form--footer,
+.layout-region-checkout-secondary .checkout-pane-order-summary  {
+  background-color: var(--primaryLighter)
+}
+
+[type="radio"]:not(:checked)+span+label:before,
+[type="radio"]:not(:checked)+span+label:after,
+[type="radio"]:not(:checked)+label:before,
+[type="radio"]:not(:checked)+label:after,
+.form-control {
+  border-color: var(--primaryLighter)
+}
+
+.file>span {
+  border-top-color: var(--primaryLighter)
+}
+
+.file>span {
+  border-bottom-color: var(--primaryLighter)
+}
+
+.file>span:first-child {
+  border-left-color: var(--primaryLighter)
+}
+
+.file>span:last-child {
+  border-right-color: var(--primaryLighter)
+}
+
+/* Primary Lighter Color */
+.path-frontpage .region-header,
+[type="radio"]:disabled:checked+span+label:after,
+[type="radio"]:disabled:checked+label:after,
+[type="checkbox"]:disabled:checked+label:after{
+  background-color: var(--primaryLight);
+}
+
+[type="radio"]:disabled:not(:checked)+span+label:before,
+[type="radio"]:disabled:not(:checked)+label:before,
+[type="radio"]:disabled:checked+span+label:before,
+[type="radio"]:disabled:checked+label:before,
+[type="radio"]:disabled:checked+span+label:before,
+[type="radio"]:disabled:checked+label:before,
+[type="radio"]:disabled:checked+span+label:after,
+[type="radio"]:disabled:checked+label:after,
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:disabled:checked+label:after {
+  border-color: var(--primaryLight)
+}
+
+.layout-region-checkout-secondary .table>tbody>tr>td {
+  border-bottom-color: var(--primaryLight)
+}

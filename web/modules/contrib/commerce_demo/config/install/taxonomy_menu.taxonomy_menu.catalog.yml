@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.catalog
+    - taxonomy.vocabulary.product_categories
+id: catalog
+label: Catalog
+vocabulary: product_categories
+menu: catalog
+expanded: false
+depth: 0
+menu_parent: 'admin:'

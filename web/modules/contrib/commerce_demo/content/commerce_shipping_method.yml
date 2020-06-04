@@ -1,0 +1,42 @@
+0c909aa1-02ac-4f23-a57e-695ecf718d84:
+  plugin:
+    target_plugin_id: flat_rate
+    target_plugin_configuration:
+      rate_label: 'Express shipping'
+      rate_amount:
+        number: '13.00'
+        currency_code: USD
+      services:
+        - default
+      default_package_type: custom_box
+  name: 'Express shipping: 2 business days'
+  conditions:
+    -
+      target_plugin_id: order_currency
+      target_plugin_configuration:
+        currencies:
+          - USD
+  condition_operator: AND
+  weight: '-9'
+  status: '1'
+ba06cf16-7319-454e-b722-5700af940d92:
+  plugin:
+    target_plugin_id: flat_rate
+    target_plugin_configuration:
+      rate_label: 'Standard shipping'
+      rate_amount:
+        number: '8.00'
+        currency_code: USD
+      services:
+        - default
+      default_package_type: custom_box
+  name: 'Standard shipping: 3 - 5 business days'
+  conditions:
+    -
+      target_plugin_id: order_currency
+      target_plugin_configuration:
+        currencies:
+          - USD
+  condition_operator: AND
+  weight: '-10'
+  status: '1'

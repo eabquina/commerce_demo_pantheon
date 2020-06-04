@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: clothing
+label: Clothing
+orderItemType: physical_product_variation
+generateTitle: true
+traits:
+  - purchasable_entity_shippable
+locked: false

@@ -1,0 +1,11 @@
+description: 'Exports content of the given type.'
+options:
+  directory: 'The destination directory'
+arguments:
+  entity_type: 'The entity type'
+  bundle: 'The bundle'
+questions:
+  entity_type: 'Select an entity type'
+  bundle: 'Select a bundle'
+messages:
+  success: 'Generated %s'

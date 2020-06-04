@@ -1,0 +1,70 @@
+shipment_good_test:
+  id: shipment_good_test
+  group: commerce_shipment
+  label: 'Good test'
+  states:
+    draft:
+      label: 'Draft'
+    ready:
+      label: 'Ready'
+    shipped:
+      label: 'Shipped'
+    canceled:
+      label: 'Canceled'
+  transitions:
+    finalize:
+      label: 'Finalize shipment'
+      from: [draft]
+      to:   ready
+    ship:
+      label: 'Send shipment'
+      from: [ready]
+      to: shipped
+    cancel:
+      label: 'Cancel shipment'
+      from: [draft, ready]
+      to:   canceled
+shipment_missing_finalize:
+  id: shipment_missing_finalize
+  group: commerce_shipment
+  label: 'Missing finalize'
+  states:
+    draft:
+      label: 'Draft'
+    ready:
+      label: 'Ready'
+    shipped:
+      label: 'Shipped'
+    canceled:
+      label: 'Canceled'
+  transitions:
+    ship:
+      label: 'Send shipment'
+      from: [ready]
+      to: shipped
+    cancel:
+      label: 'Cancel shipment'
+      from: [draft, ready]
+      to:   canceled
+shipment_missing_cancel:
+  id: shipment_missing_cancel
+  group: commerce_shipment
+  label: 'Missing cancel'
+  states:
+    draft:
+      label: 'Draft'
+    ready:
+      label: 'Ready'
+    shipped:
+      label: 'Shipped'
+    canceled:
+      label: 'Canceled'
+  transitions:
+    finalize:
+      label: 'Finalize shipment'
+      from: [draft]
+      to:   ready
+    ship:
+      label: 'Send shipment'
+      from: [ready]
+      to: shipped

@@ -1,0 +1,15 @@
+services:
+  commerce_shipping_test.test_packer:
+    class: Drupal\commerce_shipping_test\Packer\TestPacker
+    tags:
+      - { name: commerce_shipping.packer }
+
+  commerce_shipping_test.shipping_rates_subscriber:
+    class: Drupal\commerce_shipping_test\EventSubscriber\ShippingRatesSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  commerce_shipping_test.filter_shipping_methods_subscriber:
+    class: Drupal\commerce_shipping_test\EventSubscriber\FilterShippingMethodsSubscriber
+    tags:
+      - { name: event_subscriber }

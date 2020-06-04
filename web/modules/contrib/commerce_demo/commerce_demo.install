@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Commerce Demo.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function commerce_demo_install() {
+  if (!\Drupal::isConfigSyncing()) {
+    \Drupal::getContainer()->get('commerce_demo.content_importer')->onInstall();
+  }
+}

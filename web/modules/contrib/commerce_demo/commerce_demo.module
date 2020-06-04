@@ -1,0 +1,129 @@
+<?php
+
+/**
+ * @file
+ * Provides a demo store for Commerce.
+ */
+
+use Drupal\Core\Url;
+use Drupal\facets\FacetInterface;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_demo_theme($existing, $type, $theme, $path) {
+  return [
+    'commerce_demo_frontpage' => [
+      'variables' => [
+        'featured_products' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ *
+ * Workaround for taxonomy_menu not supporting custom paths. See #2865894.
+ */
+function commerce_demo_menu_links_discovered_alter(&$links) {
+  $alias_cleaner = \Drupal::service('pathauto.alias_cleaner');
+  $facet_storage = \Drupal::entityTypeManager()->getStorage('facets_facet');
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  try {
+    $view_url = Url::fromRoute('view.product_catalog.page_1');
+    $view_url = $view_url->getInternalPath();
+  }
+  catch (RouteNotFoundException $e) {
+    // The catalog View may have been disabled or deleted.
+    return;
+  }
+
+  foreach ($links as &$link) {
+    $menu_name = isset($link['menu_name']) ? $link['menu_name'] : '';
+    if ($link['provider'] == 'taxonomy_menu' && $menu_name == 'catalog') {
+      // Generate the path to the view + facets.
+      // Assumes that the facet is named the same as the vocabulary.
+      $term = $term_storage->load($link['metadata']['taxonomy_term_id']);
+      $facet = $facet_storage->load($term->bundle());
+      if (!$facet instanceof FacetInterface) {
+        continue;
+      }
+
+      // It is possible for the facet to be NULL if it was deleted, in which
+      // case we only link to the view (which is better than nothing).
+      $link['url'] = 'internal:/' . $view_url;
+      if ($facet) {
+        $label = $alias_cleaner->cleanString($term->label());
+        $link['url'] .= '/' . $facet->getUrlAlias() . '/' . $label . '-' . $term->id();
+      }
+      $link['route_name'] = '';
+      $link['route_parameters'] = [];
+      $link['load arguments'] = [];
+    }
+  }
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function commerce_demo_modules_installed($modules) {
+  if (in_array('commerce_demo', $modules)) {
+    $index_storage = \Drupal::entityTypeManager()->getStorage('search_api_index');
+    /** @var \Drupal\search_api\IndexInterface $index */
+    $index = $index_storage->load('products');
+    $index->indexItems();
+
+    $theme_handler = \Drupal::getContainer()->get('commerce_demo.theme_handler');
+    $default_theme = \Drupal::config('system.theme')->get('default');
+    $theme_handler->placeBlocks($default_theme);
+  }
+}
+
+/**
+ * Implements hook_themes_installed().
+ */
+function commerce_demo_themes_installed($theme_list) {
+  $theme_handler = \Drupal::getContainer()->get('commerce_demo.theme_handler');
+  foreach ($theme_list as $theme) {
+    $theme_handler->placeBlocks($theme);
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function commerce_demo_preprocess_breadcrumb(&$variables) {
+  // The Bootstrap theme provides a feature that appends the current page title
+  // to the end of the breadcrumbs. On the catalog page this is awkward, as
+  // Facets already appends the facet source page title when a facet filter
+  // is active.
+  //
+  // This temporarily disables that setting, as module preprocess hooks will run
+  // before the theme's, without actually changing the theme setting.
+  if (class_exists('\Drupal\bootstrap\Plugin\Preprocess\Breadcrumb')) {
+    $current_route_match = \Drupal::routeMatch();
+    if ($current_route_match->getRouteName() == 'view.product_catalog.page_1') {
+      $theme = \Drupal\bootstrap\Bootstrap::getTheme();
+      $theme->setSetting('breadcrumb_title', FALSE);
+    }
+  }
+}
+
+/**
+ * Implements hook_commerce_product_view().
+ */
+function commerce_demo_commerce_product_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode !== 'full') {
+    return;
+  }
+  $messenger = \Drupal::messenger();
+
+  if ($entity->uuid() == '93470da2-a808-4069-89ee-e01f0d5ad0b7') {
+    $messenger->addStatus(t('Use <strong>TYPEWRITER</strong> and receive <strong>20% off</strong> at checkout.'));
+  }
+  if ($entity->uuid() == '665c62ac-94a8-4929-a147-83df0f2a67c6') {
+    $messenger->addStatus(t('Use <strong>CLOCKS</strong> and receive a <strong>$4 discount</strong> at checkout'));
+  }
+}

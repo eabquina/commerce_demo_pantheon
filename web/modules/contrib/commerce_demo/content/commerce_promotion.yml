@@ -1,0 +1,142 @@
+5d3aacea-89b9-4c7c-a357-55a20a527326:
+  name: '15% off'
+  order_types:
+    - default
+    - physical
+  offer:
+    target_plugin_id: order_percentage_off
+    target_plugin_configuration:
+      percentage: '0.15'
+  condition_operator: AND
+  coupons:
+    8d6989c9-c998-41bc-b7a8-3b82fa377222:
+      promotion_id: 5d3aacea-89b9-4c7c-a357-55a20a527326
+      code: FIFTEENPERCENT
+      status: '1'
+  start_date: '2016-07-31'
+  compatibility: any
+  status: '1'
+66b266ec-42c8-489e-9f5b-78ea12cc41bd:
+  name: '20% off typewriter'
+  order_types:
+    - default
+    - physical
+  offer:
+    target_plugin_id: order_item_percentage_off
+    target_plugin_configuration:
+      conditions:
+        -
+          plugin: order_item_product
+          configuration:
+            products:
+              -
+                product: 93470da2-a808-4069-89ee-e01f0d5ad0b7
+      percentage: '0.2'
+  conditions:
+    -
+      target_plugin_id: order_product
+      target_plugin_configuration:
+        products:
+          -
+            product: 93470da2-a808-4069-89ee-e01f0d5ad0b7
+  condition_operator: AND
+  coupons:
+    da1cd6d7-11da-4cb6-b263-15003ab8728a:
+      promotion_id: 66b266ec-42c8-489e-9f5b-78ea12cc41bd
+      code: TYPEWRITER
+      status: '1'
+  start_date: '2016-07-31'
+  compatibility: any
+  status: '1'
+be121d90-282b-4182-9c1f-972532c4f5b1:
+  name: '$3 off'
+  order_types:
+    - default
+    - physical
+  offer:
+    target_plugin_id: order_fixed_amount_off
+    target_plugin_configuration:
+      amount:
+        number: '3.00'
+        currency_code: USD
+  condition_operator: AND
+  coupons:
+    da1cd6d7-11da-4cb6-b263-15003ab8728a:
+      promotion_id: 66b266ec-42c8-489e-9f5b-78ea12cc41bd
+      code: ORDER3OFF
+      status: '1'
+  start_date: '2016-07-31'
+  compatibility: any
+  status: '1'
+c089879c-fb15-4627-86d2-cf3ab8ae3743:
+  name: 'Buy 1 Get 1'
+  order_types:
+    - default
+    - physical
+  offer:
+    target_plugin_id: order_buy_x_get_y
+    target_plugin_configuration:
+      buy_quantity: '1'
+      buy_conditions:
+        -
+          plugin: order_item_product_type
+          configuration:
+            product_types:
+              - clothing
+              - default
+              - simple
+      get_quantity: '1'
+      get_conditions:
+        -
+          plugin: order_item_product_type
+          configuration:
+            product_types:
+              - clothing
+              - default
+              - simple
+      offer_type: percentage
+      offer_percentage: '1'
+      offer_amount: null
+  condition_operator: AND
+  coupons:
+    3cd23f71-9179-4334-83c7-cd81d412a1e1:
+      promotion_id: c089879c-fb15-4627-86d2-cf3ab8ae3743
+      code: BUY1GET1
+      status: '1'
+  start_date: '2016-07-31'
+  compatibility: any
+  status: '1'
+d96885ac-b61c-4984-912b-12b53930b947:
+  name: '$4 off clock'
+  order_types:
+    - default
+    - physical
+  offer:
+    target_plugin_id: order_item_fixed_amount_off
+    target_plugin_configuration:
+      conditions:
+        -
+          plugin: order_item_product
+          configuration:
+            products:
+              -
+                product: 665c62ac-94a8-4929-a147-83df0f2a67c6
+      amount:
+        number: '4.00'
+        currency_code: USD
+  conditions:
+    -
+      target_plugin_id: order_product
+      target_plugin_configuration:
+        products:
+          -
+            product: 665c62ac-94a8-4929-a147-83df0f2a67c6
+  condition_operator: AND
+  coupons:
+    23119fac-4d95-41c7-b899-287fb8693b80:
+      promotion_id: d96885ac-b61c-4984-912b-12b53930b947
+      code: CLOCKS
+      status: '1'
+  start_date: '2016-07-31'
+  compatibility: any
+  status: '1'

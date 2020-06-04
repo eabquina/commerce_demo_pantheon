@@ -1,0 +1,129 @@
+41252968-6d82-4760-b0a5-8c2e15841f7a:
+  vid: product_categories
+  name: Apothecary
+  weight: '18'
+  depth_level: '1'
+66079146-8ff2-41a5-b4e2-cad8ebedf95b:
+  vid: product_categories
+  name: 'Audio & Film'
+  weight: '23'
+  depth_level: '1'
+d52448c0-22c5-4a62-995c-e09c881a3f67:
+  vid: product_categories
+  name: Men
+  weight: '12'
+  depth_level: '1'
+a2023356-68c3-4d9d-b664-0cbf4faae6db:
+  vid: product_categories
+  name: 'Print Shop'
+  weight: '26'
+  depth_level: '1'
+1cdb9879-80aa-4534-99f3-c3a09b851edd:
+  vid: product_categories
+  name: 'Urban Living'
+  weight: '20'
+  depth_level: '1'
+f61537d9-c10b-4f93-81d7-f5f29d355c1e:
+  vid: product_categories
+  name: Women
+  weight: '8'
+  depth_level: '1'
+44d4b889-953e-4542-be92-d026af6d62c6:
+  parent:
+    - 66079146-8ff2-41a5-b4e2-cad8ebedf95b
+  vid: product_categories
+  name: Audio
+  depth_level: '2'
+d3e09fd0-c364-4c96-a41a-a2f14fda6a37:
+  parent:
+    - 1cdb9879-80aa-4534-99f3-c3a09b851edd
+  vid: product_categories
+  name: Beach
+  weight: '6'
+  depth_level: '2'
+ce786350-a6c5-44b4-8800-13da5bae619b:
+  parent:
+    - 66079146-8ff2-41a5-b4e2-cad8ebedf95b
+  vid: product_categories
+  name: Electronics
+  weight: '1'
+  depth_level: '2'
+23238452-1f0f-44df-885b-037f8ecddd0b:
+  parent:
+    - 66079146-8ff2-41a5-b4e2-cad8ebedf95b
+  vid: product_categories
+  name: Film
+  weight: '2'
+  depth_level: '2'
+9836e79c-08b7-4e6a-a719-c9b30c54fc29:
+  parent:
+    - 1cdb9879-80aa-4534-99f3-c3a09b851edd
+  vid: product_categories
+  name: 'Food & Beverage'
+  depth_level: '2'
+3fada410-028e-40a4-bec5-b175fc5372ac:
+  parent:
+    - 1cdb9879-80aa-4534-99f3-c3a09b851edd
+  vid: product_categories
+  name: Home
+  weight: '1'
+  depth_level: '2'
+aa046f49-a4cf-4278-840a-2f0e6646c407:
+  parent:
+    - 1cdb9879-80aa-4534-99f3-c3a09b851edd
+  vid: product_categories
+  name: Outdoors
+  weight: '3'
+  depth_level: '2'
+c3f0cb56-1b78-429d-a310-f40ae3915953:
+  parent:
+    - 1cdb9879-80aa-4534-99f3-c3a09b851edd
+  vid: product_categories
+  name: Toys/Novelties
+  weight: '5'
+  depth_level: '2'
+fc14b667-b68d-417a-8f42-a4ec956190f1:
+  parent:
+    - aa046f49-a4cf-4278-840a-2f0e6646c407
+  vid: product_categories
+  name: Accessories
+  depth_level: '3'
+44e2287a-934b-484d-b342-151530af4a0d:
+  parent:
+    - 3fada410-028e-40a4-bec5-b175fc5372ac
+  vid: product_categories
+  name: Accessories
+  depth_level: '3'
+a4dfc396-e34a-4741-9ed4-4898efebab6d:
+  parent:
+    - 3fada410-028e-40a4-bec5-b175fc5372ac
+  vid: product_categories
+  name: Furnishings
+  weight: '3'
+  depth_level: '3'
+c6c32afc-a96b-4d8c-af32-8ce1ffb5416a:
+  parent:
+    - d3e09fd0-c364-4c96-a41a-a2f14fda6a37
+  vid: product_categories
+  name: Inflatables
+  depth_level: '3'
+0d2f533f-c6c9-4e83-9105-e534aa0f06bc:
+  parent:
+    - 3fada410-028e-40a4-bec5-b175fc5372ac
+  vid: product_categories
+  name: Kitchen
+  weight: '1'
+  depth_level: '3'
+69235e00-ba8d-4ef6-b32e-b272b51fb45d:
+  parent:
+    - 3fada410-028e-40a4-bec5-b175fc5372ac
+  vid: product_categories
+  name: Office
+  weight: '2'
+  depth_level: '3'
+caa5a6ba-d55d-4fec-9afa-cef4e8197427:
+  parent:
+    - c3f0cb56-1b78-429d-a310-f40ae3915953
+  vid: product_categories
+  name: 'Pool Toys'
+  depth_level: '3'

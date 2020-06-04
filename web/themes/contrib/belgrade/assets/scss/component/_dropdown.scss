@@ -1,0 +1,31 @@
+.dropdown{
+  > .menu__link,
+  &-toggle {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  > .menu__link {
+    padding-right: 6px;
+    &:hover {
+      &:before {
+        display: none!important;
+      }
+      + .dropdown-toggle:before {
+        background-color: $brand-primary;
+      }
+    }
+  }
+  &-toggle{
+    cursor: pointer;
+    padding-right: nth($nav-link-padding, 2);
+    svg {
+      fill: currentColor;
+      transition: transform .3s ease;
+    }
+  }
+  &.open .dropdown-toggle {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

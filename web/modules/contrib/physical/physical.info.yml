@@ -1,0 +1,12 @@
+name: Physical Fields
+description: Provides fields for storing measurements and their units.
+type: module
+package: Field Types
+core_version_requirement: ^8.7.7 || ^9
+dependencies:
+  - drupal:field
+
+# Information added by Drupal.org packaging script on 2020-02-17
+version: '8.x-1.1'
+project: 'physical'
+datestamp: 1581940866

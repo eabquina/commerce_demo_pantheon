@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: catalog
+label: 'Catalog (370×370)'
+effects:
+  d877b505-345b-4c7c-b320-eb763a282da7:
+    uuid: d877b505-345b-4c7c-b320-eb763a282da7
+    id: image_scale
+    weight: 1
+    data:
+      width: 370
+      height: 370
+      upscale: false

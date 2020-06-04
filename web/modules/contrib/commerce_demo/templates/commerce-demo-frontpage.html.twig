@@ -1,0 +1,13 @@
+<div class="featured-products">
+  <h2 class="text-align-center">{{ 'Featured products'|t }}</h2>
+  {% for featured_product in featured_products %}
+    <div class="featured-product">
+      {{ render_var(featured_product) }}
+    </div>
+  {% endfor %}
+</div>
+<div class="testimonial">
+    <p class="h2">{{ 'Slow-carb paleo bicycle rights bushwick. Tote bag mustache man bun swag, tbh chartreuse synth stumptown portland cray.'|t }}</p>
+    <p>{{ 'Nikola White, customer'|t }}</p>
+</div>
+

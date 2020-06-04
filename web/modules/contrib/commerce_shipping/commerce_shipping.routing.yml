@@ -1,0 +1,7 @@
+commerce_shipping.configuration:
+  path: '/admin/commerce/config/shipping'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Shipping'
+  requirements:
+    _permission: 'access commerce administration pages'

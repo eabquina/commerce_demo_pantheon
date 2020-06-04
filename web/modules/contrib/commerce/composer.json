@@ -1,0 +1,24 @@
+{
+    "name": "drupal/commerce",
+    "type": "drupal-module",
+    "description": "Drupal Commerce is a flexible eCommerce solution.",
+    "homepage": "http://drupal.org/project/commerce",
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=7.0.8",
+        "ext-bcmath": "*",
+        "drupal/core": "^8.8 || ^9",
+        "drupal/address": "^1.7",
+        "drupal/entity": "^1.0-rc2",
+        "drupal/entity_reference_revisions": "~1.0",
+        "drupal/inline_entity_form": "^1.0-rc6",
+        "drupal/profile": "^1.0",
+        "drupal/state_machine": "^1.0-rc1",
+        "drupal/token": "^1.0",
+        "commerceguys/intl": "^1.0.0"
+    },
+    "require-dev": {
+        "drupal/mailsystem": "^4.3"
+    },
+    "minimum-stability": "dev"
+}

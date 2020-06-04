@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\commerce_cart_flyout\Plugin\Block\CartBlock;
+use Drupal\commerce_cart_flyout\Plugin\Field\FieldFormatter\AddToCart;
+
+function commerce_cart_flyout_theme() {
+  $defaults = ['render element' => 'elements'];
+  return [
+    'commerce_cart_flyout_block' => $defaults,
+    'commerce_cart_flyout_block_icon' => $defaults,
+    'commerce_cart_flyout_offcanvas' => $defaults,
+    'commerce_cart_flyout_offcanvas_contents' => $defaults,
+    'commerce_cart_flyout_offcanvas_contents_items' => $defaults,
+    'commerce_cart_flyout_add_to_cart_button' => $defaults,
+    'commerce_cart_flyout_add_to_cart_attributes_select' => $defaults,
+    'commerce_cart_flyout_add_to_cart_attributes_radios' => $defaults,
+    'commerce_cart_flyout_add_to_cart_attributes_rendered' => $defaults,
+    'commerce_cart_flyout_add_to_cart_variation_select' => $defaults,
+  ];
+}
+
+/**
+ * Implements hook_block_alter().
+ *
+ * Replaces the commerce_cart CartBlock block with the commerce_cart_flyout one.
+ */
+function commerce_cart_flyout_block_alter(array &$info) {
+  $info['commerce_cart']['class'] = CartBlock::class;
+  $info['commerce_cart']['provider'] = 'commerce_cart_flyout';
+}

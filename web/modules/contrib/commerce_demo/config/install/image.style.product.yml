@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product
+label: 'Product (570×570)'
+effects:
+  71c41bfa-fd42-4bc5-9048-481a347e6642:
+    uuid: 71c41bfa-fd42-4bc5-9048-481a347e6642
+    id: image_scale
+    weight: 1
+    data:
+      width: 570
+      height: 570
+      upscale: false

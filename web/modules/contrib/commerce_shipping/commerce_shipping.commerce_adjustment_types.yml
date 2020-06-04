@@ -1,0 +1,13 @@
+shipping:
+  label: 'Shipping'
+  singular_label: 'shipping cost'
+  plural_label: 'shipping costs'
+  has_ui: true
+  weight: -20
+
+shipping_promotion:
+  label: 'Shipping promotion'
+  singular_label: 'shipping promotion'
+  plural_label: 'shipping promotions'
+  has_ui: true
+  weight: -10

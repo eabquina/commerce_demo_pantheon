@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies: {  }
+id: greenville_sales_tax
+label: 'Greenville sales tax'
+plugin: custom
+configuration:
+  display_label: tax
+  round: false
+  rates:
+    -
+      id: a52a1856-6141-43b8-bbc2-e8e6b084a4fb
+      label: Standard
+      percentage: '0.06'
+  territories:
+    -
+      country_code: US
+      administrative_area: SC
+      included_postal_codes: '29601:29617, 29698'
+      excluded_postal_codes: ''
+  display_inclusive: false

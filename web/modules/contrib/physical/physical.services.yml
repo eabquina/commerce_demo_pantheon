@@ -1,0 +1,4 @@
+services:
+  physical.number_formatter:
+    class: Drupal\physical\NumberFormatter
+    arguments: ['@language_manager']
